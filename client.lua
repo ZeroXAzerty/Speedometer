@@ -25,14 +25,14 @@ Citizen.CreateThread(function()
     local speed = 0
     while true do
         Citizen.Wait(0)
-        if IsControlJustPressed(1, 303) then
-            run = false
 
-        elseif (IsPedInAnyVehicle(ped, false)) then
+        if (IsPedInAnyVehicle(ped, false)) then
+             
             speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false))*3.6
             text(math.floor(speed).." Km/h")
 
         elseif (IsPedInAnyVehicle(ped, false)) == false then
+            print("By ZeroX")
             speed = GetEntitySpeed(ped)*3.6
             secondtext(math.floor(speed).." Km/h")
             
