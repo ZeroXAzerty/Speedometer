@@ -26,21 +26,17 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if IsControlJustPressed(1, 303) then
-            run = true
-            while run == true do
-                Citizen.Wait(0)
-                if IsControlJustPressed(1, 303) then
-                    run = false
+            run = false
 
-                elseif (IsPedInAnyVehicle(ped, false)) then
-                    speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false))*3.6
-                    text(math.floor(speed).." Km/h")
+        elseif (IsPedInAnyVehicle(ped, false)) then
+            speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false))*3.6
+            text(math.floor(speed).." Km/h")
 
-                elseif (IsPedInAnyVehicle(ped, false)) == false then
-                    speed = GetEntitySpeed(ped)*3.6
-                    secondtext(math.floor(speed).." Km/h")
-                end
-            end
+        elseif (IsPedInAnyVehicle(ped, false)) == false then
+            speed = GetEntitySpeed(ped)*3.6
+            secondtext(math.floor(speed).." Km/h")
+            
         end
+        
     end
 end)
